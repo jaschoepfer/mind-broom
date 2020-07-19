@@ -8,8 +8,8 @@ test('renders header', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test('renders TODO items', () => {
+test('renders trash reminder', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/take out trash/i);
-  expect(linkElement).toBeInTheDocument();
+  const trashTodoElement = getByText(/take out trash/i);
+  expect(trashTodoElement).toBeInTheDocument();
 });

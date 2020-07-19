@@ -1,10 +1,11 @@
 import React from 'react';
+import './ActionList.css';
 
 function ActionList(props) {
     let actions = props.actions
 
     return (
-        <ul>
+        <ul className='ActionList'>
             {actions.map((action, idx) =>
                  <li key={idx}>{action}</li>   
             )}
