@@ -4,10 +4,9 @@
     flex-direction: row;
 }
 
-.ItemBorder {
-    border-color: midnightblue;
-    border-width: .2em;
-    border-style: solid
+.ItemFragment {
+    border: .2em solid midnightblue;
+    background-color: slategrey;
 }
 
 .ItemLeftCap {

@@ -6,11 +6,11 @@ function ActionItem(props) {
 
     return (
         <div className='ActionItem'>
-            <div className='ItemBorder ItemLeftCap'/>
-            <div className='ItemBorder ItemContent'>
+            <div className='ItemFragment ItemLeftCap'/>
+            <div className='ItemFragment ItemContent'>
                 {text}
             </div>
-            <div className='ItemBorder ItemRightCap'/>
+            <div className='ItemFragment ItemRightCap'/>
         </div>
     )
 }
