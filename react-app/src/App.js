@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import './elements/ActionList'
 import ActionList from './elements/ActionList';
 
 function App() {
