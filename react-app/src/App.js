@@ -1,17 +1,16 @@
 import React from 'react';
 import './App.css';
 import SweepList, {ListType} from './domain/SweepList'
-import LocalSweepListProvider from './persistence/LocalSweepListProvider.js'
+import LocalSweepListProvider from './persistence/SweepListProvider.js'
 import ActionListDisplay from './displays/ActionListDisplay';
 
 function App() {
-  let myList = new SweepList(ListType.ACTIONS)
-  myList.addItem({
-    title: 'Take out trash'
+  let myList = new SweepList({
+    name: 'My List',
+    type: ListType.ACTIONS
   })
-  myList.addItem({
-    title: 'read GTD chapter'
-  })
+  myList.items.push({name: 'Take out trash'})
+  myList.items.push({name: 'read GTD chapter'})
 
   //myListProvider = new LocalSweepListProvider(myList)
 

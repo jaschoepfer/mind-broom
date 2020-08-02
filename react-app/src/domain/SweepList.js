@@ -4,18 +4,16 @@ export const ListType = {
 }
 
 export default class SweepList{
-    constructor(type) {
-        throwIfTypeInvalid(type)
-        this.type = type
-        this.items = []
-    }
-    getItems(){
-        return this.items
-    }
-    addItem({
-        title
-    } = {}) {
-        this.items.push({title: title})
+    constructor({
+        name,
+        type,
+        items = []
+    }) {
+        throwIfTypeInvalid(type);
+
+        this.name = name;
+        this.type = type;
+        this.items = [];
     }
 }
 
