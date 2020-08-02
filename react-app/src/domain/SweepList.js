@@ -13,7 +13,7 @@ export default class SweepList{
 
         this.name = name;
         this.type = type;
-        this.items = [];
+        this.items = items;
     }
 }
 

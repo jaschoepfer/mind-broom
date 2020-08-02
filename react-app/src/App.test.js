@@ -8,4 +8,8 @@ test('App renders header text', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-
+test('App renders placeholder TODO', () => {
+  const { getByText } = render(<App />);
+  const linkElement = getByText(/take out trash/i);
+  expect(linkElement).toBeInTheDocument();
+});

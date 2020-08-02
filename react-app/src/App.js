@@ -1,18 +1,20 @@
 import React from 'react';
 import './App.css';
 import SweepList, {ListType} from './domain/SweepList'
-import LocalSweepListProvider from './persistence/SweepListProvider.js'
+import SweepListProvider from './persistence/SweepListProvider.js'
 import ActionListDisplay from './displays/ActionListDisplay';
 
 function App() {
-  let myList = new SweepList({
+  const myList = new SweepList({
     name: 'My List',
-    type: ListType.ACTIONS
+    type: ListType.ACTIONS,
+    items: [
+      {name: 'Take out trash'},
+      {name: 'read GTD chapter'}
+    ]
   })
-  myList.items.push({name: 'Take out trash'})
-  myList.items.push({name: 'read GTD chapter'})
 
-  //myListProvider = new LocalSweepListProvider(myList)
+  const myListProvider = new SweepListProvider(myList);
 
   return (
     <div className="App">
@@ -20,7 +22,7 @@ function App() {
         Sweep your mind!
       </header>
       <main>
-        {/*<ActionListDisplay provider={myListProvider}/>*/}
+        <ActionListDisplay callbacks={myListProvider.callbacks}/>
       </main>
     </div>
   );
