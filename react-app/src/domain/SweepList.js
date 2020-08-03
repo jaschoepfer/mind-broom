@@ -15,6 +15,12 @@ export default class SweepList{
         this.type = type;
         this.items = items;
     }
+    setName(name) {
+        this.name = name;
+    }
+    addItem(item) {
+        this.items.push(item);
+    }
 }
 
 function throwIfTypeInvalid(type) {
