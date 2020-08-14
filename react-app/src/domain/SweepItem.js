@@ -1,5 +1,6 @@
 export default class SweepItem {
-    constructor({name}) {
+    constructor({id, name}) {
+        this.id = id;
         this.name = name;
         this.creationDate = new Date();
         this.done = false;
