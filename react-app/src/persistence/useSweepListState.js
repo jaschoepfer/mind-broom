@@ -1,21 +1,29 @@
 import { useState, useMemo } from 'react'
-import SweepList from '../domain/SweepList';
+import SweepList, { ListType } from '../domain/SweepList';
 import SweepItem from '../domain/SweepItem';
 
-function addItemCallback(list, setList) {
-    return (args) => {
-        list.addItem(new SweepItem(args));
-        setList(list);
-    }
-}
 
 export default function useSweepListState(initialList = null) {
-    const makeInitialList = () => {return initialList ?? new SweepList}
-    const [list, setList] = useState(makeInitialList);
+    const makeInitialList = () => {
+        return initialList ?? new SweepList('New Action List', ListType.ACTIONS);
+    }
+    const [list, updateList] = useState(makeInitialList);
     
-    callbacks = useMemo({
-        addItem: addItemCallback(list, setList)
-    })
+    const callbacks = useMemo(createCallbacks(list, updateList));
 
-    return [list, callbacks]
+    return [list, callbacks];
+}
+
+function createCallbacks(list, updateList) {
+    return {
+        addItem: (name) => {
+            new_item = new SweepItem({name: name});
+            list.addItem(new_item);
+            updateList(list);
+        },
+        renameList: (new_name) => {
+            list.setName(new_name);
+            updateList(list);
+        }
+    };
 }
