@@ -1,23 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import SweepList, {ListType} from './domain/SweepList'
-import SweepListProvider from './persistence/SweepListProvider.js'
-import ActionListDisplay from './displays/ActionListDisplay';
-
-const myList = new SweepList({
-  name: 'My List',
-  type: ListType.ACTIONS,
-  items: [
-    {name: 'Take out trash'},
-    {name: 'read GTD chapter'}
-  ]
-})
+import './elements/ActionList'
+import ActionList from './elements/ActionList';
 
 function App() {
-
-  const [list, setList] = useState(myList)
-  const listProvider = new SweepListProvider(list);
-
+  let TODOs = ['Take out trash', 'read GTD chapter']
 
   return (
     <div className="App">
@@ -25,7 +13,7 @@ function App() {
         Sweep your mind!
       </header>
       <main>
-        {/*<ActionListDisplay list={list} callbacks={myListProvider.callbacks}/>*/}
+        <ActionList actions={TODOs}/>
       </main>
     </div>
   );
