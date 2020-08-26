@@ -7,9 +7,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Setup Node
+    - name: Detect local Node version
       uses: nodenv/actions/node-version
       id: nodenv
+    - name: Setup Node
       uses: actions/setup-node@v1
       with:
         node-version: '${{ steps.nodenv.outputs.node-version }}'
