@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Detect local Node version
-      uses: nodenv/actions/node-version
+      uses: nodenv/actions/node-version@v1
       id: nodenv
     - name: Setup Node
       uses: actions/setup-node@v1
