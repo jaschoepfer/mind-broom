@@ -4,9 +4,9 @@ import './App.css';
 import ActionList from './elements/ActionList';
 
 
-function addTodo(db, text, todoIDCtr) {
+function addTodo(db, text, todoID) {
   var todo = {
-    _id: '' + todoIDCtr,
+    _id: '' + todoID,
     title: text,
     completed: false
   };
@@ -17,7 +17,6 @@ function addTodo(db, text, todoIDCtr) {
       console.log('Error while posting todo: ' + err)
     }
   });
-  return todoIDCtr + 1
 }
 
 function showTodos(db, callback) {
@@ -29,6 +28,14 @@ function showTodos(db, callback) {
       console.log('Error while loading files: ' + err)
     }
   });
+}
+
+function* idMaker() {
+  var idCtr = 0
+  while (true) {
+    yield idCtr
+    idCtr += 1
+  }
 }
 
 export function AppDisplay(props) {
@@ -52,9 +59,9 @@ export function AppDisplay(props) {
 
 export default function App() {
   var db = new PouchDB('todos');
-  var todoIDCtr = 0
-  todoIDCtr = addTodo(db, 'Take out trash', todoIDCtr)
-  todoIDCtr = addTodo(db, 'read DDD', todoIDCtr)
+  var ids = idMaker();
+  addTodo(db, 'Take out trash', ids.next());
+  addTodo(db, 'read DDD', ids.next());
 
   const dbObj = {
     showTodos: function(cb){ showTodos(db, cb) }
