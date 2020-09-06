@@ -11,10 +11,8 @@ function addTodo(db, text, todoID) {
     completed: false
   };
   db.put(todo, function callback(err, result) {
-    if (!err) {
-      console.log('Successfully posted a todo: ' + text);
-    } else {
-      console.log('Error while posting todo: ' + err)
+    if (err) {
+      console.log('Error while posting todo (' + text + ', ' + todoID + '): ' + err)
     }
   });
 }
@@ -25,7 +23,7 @@ function showTodos(db, callback) {
       var todos = doc.rows.map(row => row.doc.title)
       callback(todos)
     } else {
-      console.log('Error while loading files: ' + err)
+      console.log('Error while loading todos: ' + err)
     }
   });
 }
@@ -50,9 +48,7 @@ export function AppDisplay(props) {
       <header className="App-header">
         Sweep your mind!
       </header>
-      <main>
-        <ActionList actions={todos}/>
-      </main>
+      <ActionList actions={todos}/>
     </div>
   );
 }
@@ -60,8 +56,8 @@ export function AppDisplay(props) {
 export default function App() {
   var db = new PouchDB('todos');
   var ids = idMaker();
-  addTodo(db, 'Take out trash', ids.next());
-  addTodo(db, 'read DDD', ids.next());
+  addTodo(db, 'Take out trash', ids.next().value);
+  addTodo(db, 'read DDD', ids.next().value);
 
   const dbObj = {
     showTodos: function(cb){ showTodos(db, cb) }
