@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: '${{ steps.nodenv.outputs.node-version }}'
     - name: Install Packages
-      run: npm install
+      run: npm ci
     - name: Build for Production
       run: npm run build
     - name: Deploy to GH Pages
