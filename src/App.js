@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import PouchDB from 'pouchdb'
-import './App.css';
 import ActionList from './elements/ActionList';
 
 
@@ -44,16 +43,36 @@ export function AppDisplay(props) {
   }, [props.db])
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div style={appStyle}>
+      <header style={appHeaderStyle}>
         Sweep your mind!
       </header>
-      <ActionList actions={todos}/>
+      <main style={appBodyStyle}>
+        <ActionList actions={todos}/>
+      </main>
     </div>
   );
 }
 
-export default function App() {
+const appStyle = {
+  'display': 'flex',
+  'flex-direction': 'column',
+  'height': '100%'
+}
+
+const appHeaderStyle = {
+  'background-color': '#282c34',
+  'min-height': '10vh',
+  'text-align': 'center',
+  'font-size': 'calc(10px + 2vmin)',
+  'color': 'white'
+}
+
+const appBodyStyle = {
+  'flex-grow': '1'
+}
+
+function App() {
   var db = new PouchDB('todos');
   var ids = idMaker();
   addTodo(db, 'Take out trash', ids.next().value);
@@ -65,3 +84,5 @@ export default function App() {
 
   return <AppDisplay db={dbObj}/>
 }
+
+export default App
