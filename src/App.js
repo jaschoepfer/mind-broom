@@ -48,7 +48,7 @@ export function AppDisplay(props) {
         Sweep your mind!
       </header>
       <main style={appBodyStyle}>
-        <ActionList actions={todos}/>
+        <ActionList actions={todos} addTodo={props.db.addTodo}/>
       </main>
     </div>
   );
@@ -79,7 +79,8 @@ function App() {
   addTodo(db, 'read DDD', ids.next().value);
 
   const dbObj = {
-    showTodos: function(cb){ showTodos(db, cb) }
+    showTodos: function(cb){ showTodos(db, cb) },
+    addTodo: function(text){ addTodo(db, text, ids.next().value)}
   }
 
   return <AppDisplay db={dbObj}/>

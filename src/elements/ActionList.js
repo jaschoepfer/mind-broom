@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function ActionList(props) {
     let actions = props.actions
@@ -13,27 +13,45 @@ function ActionList(props) {
                 </ul>
             </div>
             <div style={listFooterStyle}>
-                <button>Add Todo</button>
-                <input type="text" />
+                <AddItemForm addItem={props.addTodo}/>
             </div>
         </div>
     )
 }
 
+function AddItemForm(props) {
+    const [itemText, updateItemText] = useState('')
+    function handleTextChange(event){
+        updateItemText(event.target.value)
+    }
+    function handleSubmit(event){
+        props.addItem(itemText)
+        updateItemText('')
+    }
+
+    return (
+        <div style={{height: '100%'}}>
+            <button onClick={handleSubmit}>Add Todo</button>
+            <input value={itemText} type="text" onChange={handleTextChange}/>
+        </div>
+    )
+}
+
+
 const listStyle = {
-  height: '100%',
-  display: 'flex',
-  'flex-direction': 'column'
+    height: '100%',
+    display: 'flex',
+    'flex-direction': 'column'
 }
 
 const listBodyStyle = {
-  'overflow-y': 'scroll',
-  'flex-grow': '1'
+    'overflow-y': 'scroll',
+    'flex-grow': '1'
 }
 
 const listFooterStyle = {
-  'background-color': '#282c34',
-  'min-height': '10vh'
+    'background-color': '#282c34',
+    'min-height': '10vh'
 }
 
 export default ActionList
