@@ -1,0 +1,29 @@
+name: (alpha) run tests & deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - alpha
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.5.0
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
+      env:
+        CI: true
+    - name: Deploy to GH Pages
+      run: |
+        git config --global user.email ${{ secrets.GH_EMAIL }}
+        git config --global user.name ${{ secrets.GH_USERNAME }}
+        git remote set-url origin https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ secrets.GH_USERNAME }}/mind-broom.git
+        npm run deploy
