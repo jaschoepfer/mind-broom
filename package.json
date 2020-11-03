@@ -1,5 +1,6 @@
 {
-  "name": "react-app",
+  "name": "mind-broom",
+  "homepage": "https://jaschoepfer.github.io/mind-broom",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
