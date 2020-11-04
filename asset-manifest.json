@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/mind-broom/static/css/main.624c5b16.chunk.css",
-    "main.js": "/mind-broom/static/js/main.49398bad.chunk.js",
-    "main.js.map": "/mind-broom/static/js/main.49398bad.chunk.js.map",
+    "main.js": "/mind-broom/static/js/main.ee9d08aa.chunk.js",
+    "main.js.map": "/mind-broom/static/js/main.ee9d08aa.chunk.js.map",
     "runtime-main.js": "/mind-broom/static/js/runtime-main.cf7e8b9f.js",
     "runtime-main.js.map": "/mind-broom/static/js/runtime-main.cf7e8b9f.js.map",
-    "static/js/2.75d44d9d.chunk.js": "/mind-broom/static/js/2.75d44d9d.chunk.js",
-    "static/js/2.75d44d9d.chunk.js.map": "/mind-broom/static/js/2.75d44d9d.chunk.js.map",
+    "static/js/2.c8c78f61.chunk.js": "/mind-broom/static/js/2.c8c78f61.chunk.js",
+    "static/js/2.c8c78f61.chunk.js.map": "/mind-broom/static/js/2.c8c78f61.chunk.js.map",
     "index.html": "/mind-broom/index.html",
-    "precache-manifest.b7a6ec0a3590cf766e111fc155c25a9b.js": "/mind-broom/precache-manifest.b7a6ec0a3590cf766e111fc155c25a9b.js",
+    "precache-manifest.157e065f6097dfd4188bc253bec7bf30.js": "/mind-broom/precache-manifest.157e065f6097dfd4188bc253bec7bf30.js",
     "service-worker.js": "/mind-broom/service-worker.js",
     "static/css/main.624c5b16.chunk.css.map": "/mind-broom/static/css/main.624c5b16.chunk.css.map",
-    "static/js/2.75d44d9d.chunk.js.LICENSE.txt": "/mind-broom/static/js/2.75d44d9d.chunk.js.LICENSE.txt",
+    "static/js/2.c8c78f61.chunk.js.LICENSE.txt": "/mind-broom/static/js/2.c8c78f61.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/mind-broom/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.cf7e8b9f.js",
-    "static/js/2.75d44d9d.chunk.js",
+    "static/js/2.c8c78f61.chunk.js",
     "static/css/main.624c5b16.chunk.css",
-    "static/js/main.49398bad.chunk.js"
+    "static/js/main.ee9d08aa.chunk.js"
   ]
 }
