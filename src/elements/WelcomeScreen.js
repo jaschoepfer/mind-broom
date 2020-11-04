@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../logo.svg'
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen(props) {
     return (<div style={welcomeStyle}>
         <img src={logo} style={logoStyle} alt='I should get a logo' />
         <p style={welcomeTextStyle}>
@@ -11,8 +11,8 @@ export default function WelcomeScreen() {
 }
 
 const welcomeStyle = {
-    'text-align': 'center',
-    'background-color': '#008080',
+    textAlign: 'center',
+    backgroundColor: '#008080',
     height: '100%'
 }
 
@@ -21,7 +21,7 @@ const logoStyle = {
 }
 
 const welcomeTextStyle = {
-    'font-size': 'calc(10px + 2vmin)',
-    'justify-content': 'center',
+    fontSize: 'calc(10px + 2vmin)',
+    justifyContent: 'center',
     color: 'white'
 }

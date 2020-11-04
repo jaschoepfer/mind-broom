@@ -1,7 +1,20 @@
 import WelcomeScreen from './elements/WelcomeScreen.js'
 
-export class Welcome {
+class Page {
+    constructor(element, args){
+        this.element = element
+        this.args = args
+    }
+    render(navCallbacks){
+        return this.element({
+            ...this.args,
+            'navigation': navCallbacks
+        })
+    }
+}
+
+export class Welcome extends Page {
     constructor(){
-        this.render = WelcomeScreen
+        super(WelcomeScreen, {})
     }
 }
