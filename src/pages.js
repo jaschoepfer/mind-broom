@@ -5,10 +5,10 @@ class Page {
         this.element = element
         this.args = args
     }
-    render(navCallbacks){
+    render(navCallback){
         return this.element({
             ...this.args,
-            'navigation': navCallbacks
+            'navigateTo': navCallback
         })
     }
 }
