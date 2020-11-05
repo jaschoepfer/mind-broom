@@ -2,9 +2,9 @@ import { useState } from 'react'
 import * as Pages from './pages.js'
 
 function App() {
-  const [pageStack, setPageStack] = useState([new Pages.Welcome()])
+  let [pageStack, setPageStack] = useState([new Pages.Welcome()])
 
-  const navCallbacks = {
+  let navCallbacks = {
     'back': () => {
       if(pageStack.length > 1){
         let newPageStack = pageStack.slice(0, pageStack.length - 1)
