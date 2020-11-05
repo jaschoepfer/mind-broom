@@ -1,7 +1,11 @@
 import { useState } from 'react'
-import * as Pages from './pages.js'
+import { Welcome as WelcomePage } from './pages.js'
 
-export var initialPage = new Pages.Welcome()
+var initialPage = new WelcomePage()
+
+export function setInitialPage(page) {
+  initialPage = page
+}
 
 export default function App() {
   let [currentPage, navigateTo] = useState(initialPage)
