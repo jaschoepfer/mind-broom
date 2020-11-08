@@ -1,13 +1,10 @@
 import { useState } from 'react'
 import { Welcome as WelcomePage } from './pages.js'
 
-var initialPage = new WelcomePage()
+const defaultInitialPage = new WelcomePage()
 
-export function setInitialPage(page) {
-  initialPage = page
-}
-
-export default function App() {
+export default function App(props) {
+  let initialPage = props.initialPage || defaultInitialPage
   let [currentPage, navigateTo] = useState(initialPage)
   return currentPage.render(navigateTo)
 }
