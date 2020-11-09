@@ -1,12 +1,11 @@
 import PouchDB from 'pouchdb'
-PouchDB.plugin(require('pouchdb-adapter-memory'))
 
 var lists
 var items
 
 const pouchOptions = {}
 
-export async function initialize(testOptions) {
+export async function initialize(testOptions={}) {
     let options = {
         ...pouchOptions,
         ...testOptions
