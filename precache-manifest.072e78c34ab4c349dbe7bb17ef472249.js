@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "edf805fc1236e6c783d8ffdab32ec9b0",
+    "revision": "f196a14a7dd71c3faa5ca42a225d91c5",
     "url": "/mind-broom/index.html"
   },
   {
-    "revision": "ecc3650fa87478071e75",
-    "url": "/mind-broom/static/css/main.624c5b16.chunk.css"
+    "revision": "528cbf1d2e23835159b2",
+    "url": "/mind-broom/static/css/main.d916393e.chunk.css"
   },
   {
     "revision": "cfb88112158d2b54f1d8",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mind-broom/static/js/2.c8c78f61.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ecc3650fa87478071e75",
-    "url": "/mind-broom/static/js/main.5ca36659.chunk.js"
+    "revision": "528cbf1d2e23835159b2",
+    "url": "/mind-broom/static/js/main.a86c66d4.chunk.js"
   },
   {
     "revision": "6733eb4829fdb2c28f63",
