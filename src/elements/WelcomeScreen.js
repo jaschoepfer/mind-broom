@@ -12,7 +12,6 @@ export default function WelcomeScreen(props) {
 
 const welcomeStyle = {
     textAlign: 'center',
-    backgroundColor: '#008080',
     height: '100%'
 }
 
